@@ -1,0 +1,51 @@
+
+<div class="faq page-width page-width--narrow">
+  {% for block in section.blocks %}
+   <div class="tab">
+            <input type="checkbox" id="tab{{forloop.index}}" class="tab-toggle">
+            <label for="tab{{forloop.index}}" class="tab-label">{{block.settings.faq-title}}</label>
+            <div class="tab-content">{{block.settings.faq-content}}</div>
+   </div>
+  {% endfor %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "F.A.Q section",
+    "settings": [],
+	"blocks": [
+		{
+			"type": "text",
+			"name": "FAQ content",
+			"settings": [
+				{
+					"id": "faq-title",
+					"type": "text",
+					"label": "Faq Title"
+				},
+				{
+					"id": "faq-content",
+					"type": "textarea",
+					"label": "Faq Content"
+				}	
+
+
+			] 
+ 
+
+		}
+
+
+   ],
+"presets": [
+
+				{
+					"category": "FAQ Section",
+					"name": "faq content"
+				}
+
+		   ]
+  }
+{% endschema %}
+
